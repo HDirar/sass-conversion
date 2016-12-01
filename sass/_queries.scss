@@ -1,14 +1,18 @@
 // queries file
 
 /**********  MEDIA QU  ***************///
-       @include bp(mobile){
+@include bp(701px){
     header{
         width: 700px;
-        margin: 0 auto;
+       /* margin: 0 auto;*/
         min-height: 8rem;
      h1{
-        width: 100%;
+       /* width: 100%;*/
         color: $col-darkbrown;
+         
+    &:before,&:after{
+        width:230px;
+    }
         i.fa-lg{ 
         display:inline;
         color: $col-darkbrown;
@@ -16,7 +20,7 @@
         float:none;
         font-size: 4rem;
         line-height: 6.3968rem;
-            span{
+           ~ span{
         float: none;
         letter-spacing: 0.25rem;
         font-size: 3.998rem;
@@ -25,9 +29,7 @@
     }
     }
     }
-    &:before,&:after{
-        width:230px;
-    }
+  
         nav{
         position: static;
         clear:both;
@@ -81,13 +83,10 @@
         display:none;
     }
 }
-
-
-
-@include bp(med){
+@include bp(901px){
     header{
         width: 900px;
-        margin: 0 auto;
+//        margin: 0 auto;
        &:before,&:after{
         width:300px;
         }
@@ -96,7 +95,7 @@
         clear:both;
         width: 100%;
         padding: 0;
-            li{
+           >ul > li{
         width:20%;
         float: left;
         background-color: $col-lightwhite;
@@ -120,7 +119,7 @@
     }
     }
     }   
-    }
+    
     header nav>ul>li:first-child a{
         border-left:none;
     }
@@ -168,25 +167,41 @@
         font-size: 1rem;
         font-weight: 400;
     }
-    footer .fa-circle{
+    footer{
+        
+    
+     .fa-circle{
         color: $col-lightbrown;
     }
-    footer h4[lang=ru]{
+    
+     .col-2:last-child{
+        unicode-bidi: normal;
+        direction: ltr;
+    }
+    p{
+        color:$col-darkgrey;
+    }
+    &[lang=ru]{
        display:block; 
     }
-    footer h4[lang=de],
-    footer h4[lang=ar],
-    footer h4[lang=en]{
+    &[lang=de],
+    &[lang=ar],
+    &[lang=en]{
         display:none;
-    }
-
-@include bp(large){
+        }}}
+@include bp(1401px){
     header{
         width: 1400px;
         margin:0 auto;
        &:before,&:after{
         width:450px;
        }
+        h1{
+        color: $col-darkbrown;
+           float: none;
+           i.fa-lg{
+        color: $col-darkbrown;
+    }
         nav{
         position: static;
         clear:both;
@@ -208,14 +223,10 @@
         }
         }
         }
-       h1{
-        color: $col-darkbrown;
-           i.fa-lg{
-        color: $col-darkbrown;
-    }
+       
     }
     } 
-    }
+    
     
     header nav>ul>li:first-child a{
         border-left:none;
@@ -266,24 +277,27 @@
         font-size: 1.414rem;
         font-weight: 400;
     }
-    footer p{
-        font-size: 1.414rem;
-        letter-spacing: 0.2rem;
-    }
-    footer p:last-child{
-        color: $col-lightgrey;
-    }
-    footer .fa-circle{
-        color: $col-medblue;
-    }
+    footer{
+        .fa-circle{
+            color:$col-medblue;
+        }
+        p{
+            font-size:1.414rem;
+            letter-spacing: 0.2rem;
+            color:$col-darkgrey;
+            &:last-child{
+                color:$col-lightgrey;
+            }
+        }
+        h4{
+            &[lang=en]{
+                display:block;
+            }
+            &[lang=de],&[lang=ar],&[lang=ru]{
+                display:none;
+            }
+        }
+            
+        }
     
-    footer h4[lang=en]{
-       display:block; 
-    }
-    footer h4[lang=de],
-    footer h4[lang=ar],
-    footer h4[lang=ru]{
-        display:none;
-    }
-    
-
+        }

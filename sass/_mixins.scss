@@ -16,20 +16,25 @@
   }
   
 }
-@mixin bp($queries){
 
-    $queries_mobile: 701px;
-    $queries_med   : 901px; 
-    $queries_large : 1400px;
-    $queries_Xlarge: 1401px;
-    
-    @if $queries == mobile {
-        @media (min-width:701px) and (max-width:900px){@content;}
-    }
-    @else if $queries == med {
-        @media (min-width:901px) and (max-width:1400px){@content;}
-    }
-    @else if $queries == large {
-        @media (min-width:1401px){@content;}
-    
+@mixin bp($size){
+    @media all and(min-width:$size){
+        @content;
     }}
+//@mixin bp($queries){
+//
+//    $queries_mobile: 701px;
+//    $queries_med   : 901px; 
+//    $queries_large : 1400px;
+//    $queries_Xlarge: 1401px;
+//    
+//    @if $queries == mobile {
+//        @media (min-width:701px) and (max-width:900px){@content;}
+//    }
+//    @else if $queries == med {
+//        @media (min-width:901px) and (max-width:1400px){@content;}
+//    }
+//    @else if $queries == large {
+//        @media (min-width:1401px){@content;}
+//    
+//    }}
